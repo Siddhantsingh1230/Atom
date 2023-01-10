@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+    <title>Atom</title>
+    <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+    <meta name="vieport" content="width=device-width,initial-scale=1.0" />
+    <style type="text/css" media="all">
+      * {
+        margin: 0px;
+        padding: 0px;
+      }
+      body {
+        height: 100vh;
+        width: 100vw;
+        background-color: black;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .nuclei {
+        width: 80px;
+        height: 80px;
+
+        border-radius: 50%;
+        position: relative;
+        animation-name: glow;
+        animation-duration: 4s;
+        animation-iteration-count: infinite;
+        animation-direction: alternate;
+        animation-timing-function:ease;
+      }
+      @keyframes glow {
+        100% {
+          -webkit-box-shadow: 0px 0px 120px 15px rgba(255, 20, 145, 1);
+          -moz-box-shadow: 0px 0px 120px 15px rgba(255, 20, 145, 1);
+          box-shadow: 0px 0px 120px 15px rgba(255, 20, 145, 1);
+        }
+      }
+      .electron {
+        background-color: deeppink;
+        height: 100%;
+        width: 100%;
+        border-radius: 50%;
+        transition: all 2s ease;
+        
+        animation-name: spin;
+        animation-duration: 5s;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+      }
+      
+      .electron::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 20px;
+        background-color: lightskyblue;
+        left: -60px;
+        top: -60px;
+        border-radius: 50%;
+        
+      }
+      
+
+      @keyframes spin {
+        0% {
+          transform: rotateZ(0deg);
+        }
+        100% {
+          transform: rotateZ(360deg);
+        }
+      }
+      
+      #title{
+        position: fixed;
+        top: 10px;
+        text-align: center;
+        font-size: 45px;
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="nuclei">
+      <div class="electron"></div>
+    </div>
+    <div id="title">
+      ᴀᴛ๏ᴍ
+    </div>
+  </body>
+</html>
